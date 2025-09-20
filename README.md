@@ -25,3 +25,28 @@ Analogi gampang: firewall itu kayak **satpam rumah** — dia cek siapa yang bole
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo iptables -V
+```
+2. **Set default policy → block semua incoming**
+```bash
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT ACCEPT
+```
+3.**Buka akses SSH (biar nggak ngelock diri sendiri)**
+```bash
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+```
+4.**Buka HTTP & HTTPS (untuk web server)**
+```bash
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+```
+5.**Save rules supaya tetap ada setelah reboot**
+```bash
+sudo apt install iptables-persistent -y
+sudo iptables-save > /etc/iptables/rules.v4
+```
+6.**Tes pake Nmap**
+```bash
+nmap -sT <IP_SERVER>
+```
