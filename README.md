@@ -1,10 +1,6 @@
 # Basic Firewall with iptables
-<p align="center">
-  <img src="images/" width="200"/>
-</p>
 
-**Halo!** 👋  
-Ini project kecil gue buat nunjukin cara bikin **firewall sederhana** di Linux pakai **iptables**.  
+Halo!👋 Gua bagas dan ini small project gue buat nunjukin cara buat **firewall sederhana** di Linux menggunakan **iptables**.  
 Analogi gampang: firewall itu kayak **satpam rumah** — dia cek siapa yang boleh masuk, siapa yang nggak.
 
 ---
