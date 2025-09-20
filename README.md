@@ -1,6 +1,6 @@
 # Basic Firewall with iptables
 <p align="center">
-  <img src="images/firewall.png" width="200"/>
+  <img src="images/" width="200"/>
 </p>
 
 **Halo!** 👋  
