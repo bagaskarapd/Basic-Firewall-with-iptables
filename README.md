@@ -2,6 +2,7 @@
 <p align="center">
   <img src="images/firewall.png" width="200"/>
 </p>
+
 **Halo!** 👋  
 Ini project kecil gue buat nunjukin cara bikin **firewall sederhana** di Linux pakai **iptables**.  
 Analogi gampang: firewall itu kayak **satpam rumah** — dia cek siapa yang boleh masuk, siapa yang nggak.
