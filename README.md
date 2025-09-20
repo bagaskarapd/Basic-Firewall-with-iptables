@@ -1,14 +1,15 @@
 # Basic Firewall with iptables
 
 Halo!👋 Gua bagas dan ini small project gue buat nunjukin cara buat **firewall sederhana** di Linux menggunakan **iptables**.  
+
 Analogi gampang: firewall itu kayak **satpam rumah** — dia cek siapa yang boleh masuk, siapa yang nggak.
 
 ---
 
 ## 🎯 Tujuan
-- Bikin firewall dasar di Linux.  
-- Batasi port yang boleh diakses.  
-- Tes pakai Nmap untuk buktiin rules bekerja.  
+- Membuat firewall dasar di Linux.  
+- Membatasi port yang boleh diakses.  
+- Tes menggunakan Nmap untuk buktiin rules bekerja.  
 ---
 
 ## Tools
@@ -18,7 +19,7 @@ Analogi gampang: firewall itu kayak **satpam rumah** — dia cek siapa yang bole
 
 ---
 
-## Langkah Singkat (Step-by-step)
+## Step-by-step
 
 1. **Update sistem & cek iptables**
 ```bash
