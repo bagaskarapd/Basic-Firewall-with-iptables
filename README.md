@@ -27,13 +27,7 @@ Analogi gampang: firewall itu kayak **satpam rumah** yang cek siapa yang boleh m
 sudo apt update && sudo apt upgrade -y
 sudo iptables -V
 ```
-2. **Set default policy → block semua incoming**
-```bash
-sudo iptables -P INPUT DROP
-sudo iptables -P FORWARD DROP
-sudo iptables -P OUTPUT ACCEPT
-```
-3. **Nmap BEFORE (dari Windows host)**
+2. **Nmap BEFORE (dari Windows host)**
 ```bash
 nmap -sT 192.168.56.104
 ```
@@ -41,7 +35,7 @@ nmap -sT 192.168.56.104
   <img src="images/nmap-before.png" alt="nmap-before after" width="700">
 </p> 
 
-4. **Tambahkan Rules**
+3. **Tambahkan Rules**
 ```bash
 # Allow loopback (mengizinkan komunikasi internal localhost)
 sudo iptables -A INPUT -i lo -j ACCEPT
@@ -59,7 +53,7 @@ sudo iptables -P INPUT DROP
 sudo iptables -P FORWARD DROP
 sudo iptables -P OUTPUT ACCEPT
 ```
-6.**Cek iptables setelah apply**
+4.**Cek iptables setelah apply**
 ```bash
 sudo iptables -L -v -n
 ```
@@ -67,7 +61,7 @@ sudo iptables -L -v -n
   <img src="images/Iptables.png" alt="nmap-before after" width="700">
 </p> 
 
-6.**Nmap AFTER (dari Windows host)**
+5.**Nmap AFTER (dari Windows host)**
 ```bash
 nmap -sT 192.168.56.104
 ```
@@ -75,9 +69,9 @@ nmap -sT 192.168.56.104
   <img src="images/nmap-after.png" alt="nmap-after" width="700">
 </p> 
 
-7.**Save rules supaya tetap ada setelah reboot**
+6.**Save rules supaya tetap ada setelah reboot**
 ```bash
 sudo apt install iptables-persistent -y
 sudo iptables-save > /etc/iptables/rules.v4
 ```
-Intinya: gue nge-set firewall dasar: semua incoming diblok kecuali port penting (SSH & HTTP). Setelah diterapkan, scanner dari host (Windows) nggak bisa menemukan port FTP lagi — bukti firewall bekerja. Simple tapi efektif untuk baseline security.
+Intinya: gue nge-set firewall dasar: semua incoming diblok kecuali port penting (SSH & HTTP). Setelah diterapkan, scanner dari host (Windows) nggak bisa menemukan port FTP lagi, yang artinya firewall bekerja. Simple tapi efektif untuk baseline security.
