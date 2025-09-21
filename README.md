@@ -38,8 +38,9 @@ sudo iptables -P OUTPUT ACCEPT
 nmap -sT 192.168.56.104
 ```
 <p align="center">
-  <img src="images/iptables-after.png" alt="iptables after" width="700">
+  <img src="images/nmap-before.png" alt="nmap-before after" width="700">
 </p> 
+
 4. **Buka akses SSH (biar nggak ngelock diri sendiri)**
 ```bash
 sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
@@ -53,6 +54,10 @@ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ```bash
 nmap -sT 192.168.56.104
 ```
+<p align="center">
+  <img src="images/nmap-after.png" alt="nmap-after" width="700">
+</p> 
+
 7.**Save rules supaya tetap ada setelah reboot**
 ```bash
 sudo apt install iptables-persistent -y
