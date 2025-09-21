@@ -64,7 +64,7 @@ sudo iptables -P OUTPUT ACCEPT
 sudo iptables -L -v -n
 ```
 <p align="center">
-  <img src="images/nmap-before.png" alt="nmap-before after" width="700">
+  <img src="images/Iptables.png" alt="nmap-before after" width="700">
 </p> 
 
 6.**Nmap AFTER (dari Windows host)**
